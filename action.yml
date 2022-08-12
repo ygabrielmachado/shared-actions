@@ -1,0 +1,28 @@
+---
+name: Deploy App
+description: Deploy application on cloud
+inputs:
+  env:
+    description: Environment to deploy app
+    required: true
+    default: dev
+
+  region:
+    description: Cloud region to deploy app
+    required: false
+    default: us-east-1
+ 
+  application-name: 
+    description: Application name
+    required: false
+
+  sharedScript: 
+    description: Choose which shared script you would like to use
+    required: true
+    default: healthcheck
+outputs:
+  outLogs:
+    description: Logs
+runs:
+  using: node12
+  main: action/index.js    
